@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe "User pages" do
 	
-	subject { page }
+	subject { page } 
 
 	describe "signup page" do
 		before { visit signup_path }
@@ -10,6 +10,7 @@ describe "User pages" do
 		it { should have_selector('h1',		text: 'Sign up') }
 		it { should have_selector('title',	text: 'Sign up') }
 	end
+	
 
 	describe "profile page" do
 		#code to make a user variable
@@ -113,5 +114,5 @@ describe "User pages" do
 			end
 		end
 	end
-	
+
 end

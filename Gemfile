@@ -9,6 +9,16 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'guard-rspec'
   gem 'annotate', '~> 2.4.1.beta'
+  gem 'capybara', '1.1.2'
+  gem 'rspec-rails'
+  gem 'rb-fsevent', :require => false
+  gem 'growl'
+  gem 'ruby_gntp'
+  gem 'guard-spork'
+  #gem 'spork'
+  gem 'factory_girl_rails', '1.4.0'
+  gem 'cucumber-rails', '1.2.1'
+  gem 'database_cleaner', '0.7.0'
 end
 
 # Gems used only for assets and not required
@@ -21,18 +31,6 @@ end
 
 gem 'jquery-rails', '2.0.0'
 
-group :test do
-  gem 'capybara', '1.1.2'
-  gem 'rspec-rails'
-  gem 'rb-fsevent', :require => false
-  gem 'growl'
-  gem 'ruby_gntp'
-  gem 'guard-spork'
-  gem 'spork'
-  gem 'factory_girl_rails', '1.4.0'
-  gem 'cucumber-rails', '1.2.1'
-  gem 'database_cleaner', '0.7.0'
-end
 
 group :production do
    gem 'pg'
