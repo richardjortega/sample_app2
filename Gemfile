@@ -3,6 +3,9 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.1'
 gem 'bootstrap-sass', '2.0.0'
 gem 'bcrypt-ruby', '3.0.1'
+gem 'faker', '1.0.1'
+gem 'bootstrap-will_paginate', '0.0.6'
+
 
 group :development, :test do
   gem 'sqlite3', '1.3.5'
@@ -15,7 +18,6 @@ group :development, :test do
   gem 'growl'
   gem 'ruby_gntp'
   gem 'guard-spork'
-  #gem 'spork'
   gem 'factory_girl_rails', '1.4.0'
   gem 'cucumber-rails', '1.2.1'
   gem 'database_cleaner', '0.7.0'
