@@ -58,19 +58,6 @@ describe "Authentication" do
         before { delete user_path(user) }
         specify { response.should redirect_to(root_path) }
       end
-
-      describe "in the Microposts controller" do
-
-        describe "submitting to the create action" do
-          before { post microposts_path }
-          specify { response.should redirect_to(signin_path) }
-        end
-
-        describe "submitting to the destroy action" do
-          before { delete micropost_path(FactoryGirl.create(:micropost)) }
-          specify { response.should redirect_to(signin_path)}
-        end
-      end
       
     end
 
@@ -91,6 +78,20 @@ describe "Authentication" do
             page.should have_selector('title', text: 'Edit user')
           end
         end
+
+      describe "in the Microposts controller" do
+
+        describe "submitting to the create action" do
+          before { post microposts_path }
+          specify { response.should redirect_to(signin_path) }
+        end
+
+        describe "submitting to the destroy action" do
+          before { delete micropost_path(FactoryGirl.create(:micropost)) }
+          specify { response.should redirect_to(signin_path)}
+        end
+      end
+
       end
 
       describe "in the Users controller" do
