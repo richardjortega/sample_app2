@@ -48,18 +48,7 @@ describe "Authentication" do
 
   describe "authorization" do
 
-    describe "as non-admin user" do
-      let(:user) { FactoryGirl.create(:user) }
-      let(:non_admin) { FactoryGirl.create(:user) }
-
-      before { sign_in non_admin }
-
-      describe "submitting a DELETE request to the Users#Destroy action" do
-        before { delete user_path(user) }
-        specify { response.should redirect_to(root_path) }
-      end
-      
-    end
+    
 
     describe "for non-signed-in users" do
       let(:user) { FactoryGirl.create(:user) }
@@ -116,7 +105,7 @@ describe "Authentication" do
           it { should have_selector('title', text: 'Sign in') }
         end
 
-        describe "visiting the follower page" do
+        describe "visiting the followers page" do
           before { visit followers_user_path(user) }
           it { should have_selector('title', text: 'Sign in') }
         end
@@ -139,6 +128,19 @@ describe "Authentication" do
         specify { response.should redirect_to(root_path) }
       end
     end
+
+    describe "as non-admin user" do
+      let(:user) { FactoryGirl.create(:user) }
+      let(:non_admin) { FactoryGirl.create(:user) }
+
+      before { sign_in non_admin }
+
+      describe "submitting a DELETE request to the Users#Destroy action" do
+        before { delete user_path(user) }
+        specify { response.should redirect_to(root_path) }
+      end
+    end
+
   end
 
 end
